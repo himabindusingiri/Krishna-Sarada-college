@@ -1,0 +1,2208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Krishna Sharada Junior & Degree College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== HEADER STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&display=swap');
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #f1c40f;
+            --accent: #e67e22;
+            --light: #ecf0f1;
+            --dark: #1a2530;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            background: rgba(44, 62, 80, 0.95);
+        }
+        
+        header.sticky {
+            padding: 5px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Logo Styles */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+        }
+        
+        .logo-img {
+            height: 70px;
+            width: 70px;
+            object-fit: contain;
+            transition: var(--transition);
+            animation: pulse 2s infinite alternate, floatLogo 6s infinite ease-in-out;
+            border-radius: 50%;
+            border: 2px solid var(--secondary);
+            padding: 5px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .college-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 2rem;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .college-location {
+            font-size: 0.8rem;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+        
+        .college-location i {
+            color: var(--secondary);
+        }
+        
+        header.sticky .logo-img {
+            height: 50px;
+            width: 50px;
+        }
+        
+        header.sticky .college-name {
+            font-size: 1.2rem;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-item i {
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+        
+        .contact-item:hover a {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .contact-item:hover i {
+            transform: scale(1.2);
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background-color: #34495e;
+            transition: var(--transition);
+        }
+        
+        header.sticky nav {
+            background-color: rgba(52, 73, 94, 0.98);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: var(--transition);
+            font-weight: 500;
+            position: relative;
+            font-size: 1.3rem;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 70%;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--secondary);
+            transform: scale(1.1);
+        }
+        
+        /* ===== EXISTING ADMISSION PAGE STYLES ===== */
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            max-height: 800px;
+            overflow: hidden;
+            margin-top: 80px; /* Added for header spacing */
+        }
+        
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            transform: scale(1.1);
+            z-index: 1;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 2;
+        }
+        
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+            z-index: 3;
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            text-align: center;
+            color: white;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .hero-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 5;
+            transform: translateY(-50%);
+        }
+        
+        .slider-arrow {
+            background: rgba(241, 196, 15, 0.7);
+            color: #2c3e50;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .slider-arrow:hover {
+            background: #f1c40f;
+            transform: scale(1.1);
+        }
+        
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 5;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .slider-dot.active {
+            background: #f1c40f;
+            transform: scale(1.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #f1c40f;
+            color: #2c3e50;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid #f1c40f;
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: #f1c40f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .admissions {
+            padding: 120px 0 80px;
+            background-color: white;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: #f1c40f;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .admission-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .process-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.4s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #f1c40f;
+        }
+        
+        .process-icon {
+            font-size: 2.5rem;
+            color: #f1c40f;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .process-card:hover .process-icon {
+            transform: scale(1.1);
+        }
+        
+        .process-card h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.4rem;
+        }
+        
+        .process-card p {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+        
+        .process-card .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #f1c40f;
+            color: #2c3e50;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .requirements {
+            background-color: #f5f5f5;
+            padding: 80px 0;
+            margin: 60px 0;
+        }
+        
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .requirement-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid #f1c40f;
+        }
+        
+        .requirement-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .requirement-card ul {
+            list-style-position: inside;
+            margin-bottom: 20px;
+        }
+        
+        .requirement-card li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .application-form {
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-container h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #f1c40f;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.2);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .submit-btn {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .important-dates {
+            background-color: #2c3e50;
+            color: white;
+            padding: 80px 0;
+            margin-top: 60px;
+        }
+        
+        .dates-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .dates-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .dates-title h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .dates-title p {
+            color: #ecf0f1;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #f1c40f;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: -50px;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #f1c40f;
+            color: #2c3e50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-content {
+            background-color: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            margin-left: 30px;
+        }
+        
+        .timeline-content h4 {
+            margin-bottom: 10px;
+            color: #f1c40f;
+        }
+        
+        .timeline-content p {
+            color: #ecf0f1;
+        }
+        
+        .contact-info {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            transition: all 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: #f1c40f;
+            margin-bottom: 20px;
+        }
+        
+        .contact-card h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .contact-card p, .contact-card a {
+            color: #666;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+        }
+        
+        .contact-card a:hover {
+            color: #f1c40f;
+        }
+        
+        footer {
+            background: linear-gradient(to right, #2c3e50, #34495e);
+            color: white;
+            padding: 70px 0 20px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, #f1c40f, #e67e22);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: #f1c40f;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: #f1c40f;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ecf0f1;
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #f1c40f;
+            transform: translateX(5px);
+        }
+        
+        .footer-column a i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #f1c40f;
+            color: #2c3e50;
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Admissions Section */
+        .admissions {
+            padding: 120px 0 80px;
+            background-color: white;
+            position: relative;
+        }
+        
+        .admissions-section {
+            margin-bottom: 80px;
+        }
+        
+        .admissions-section h3 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .admissions-section h3::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: #f1c40f;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Admission Form Styles */
+        .admission-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .step {
+            margin-bottom: 40px;
+            display: none;
+        }
+        
+        .step.active {
+            display: block;
+        }
+        
+        .step h4 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #f1c40f;
+            outline: none;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .payment-section {
+            text-align: center;
+        }
+        
+        .payment-section img {
+            max-width: 200px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .payment-section a {
+            margin: 10px;
+            color: #f1c40f;
+            text-decoration: none;
+        }
+        
+        .payment-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .payment-option {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+        
+        .payment-option:hover {
+            border-color: #f1c40f;
+            transform: translateY(-5px);
+        }
+        
+        .payment-option i {
+            font-size: 2rem;
+            color: #f1c40f;
+            margin-bottom: 10px;
+        }
+        
+        .summary-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-section p {
+            margin-bottom: 10px;
+        }
+        
+        .edit-btn {
+            background-color: transparent;
+            color: #f1c40f;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .edit-btn:hover {
+            text-decoration: underline;
+        }
+        
+        .upload-preview img {
+            max-width: 100%;
+            max-height: 200px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        
+        .thank-you-message {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        
+        /* Enhanced Program Selection Boxes */
+        .program-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .program-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .program-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+            border-color: #f1c40f;
+        }
+        
+        .program-box.active {
+            border-color: #f1c40f;
+            background: linear-gradient(145deg, #fffde7, #ffffff);
+        }
+        
+        .program-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(241,196,15,0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .program-box:hover::before,
+        .program-box.active::before {
+            opacity: 1;
+        }
+        
+        .program-icon {
+            font-size: 2.5rem;
+            color: #f1c40f;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .program-box:hover .program-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .program-box h3 {
+            color: #2c3e50;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .program-box p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        
+        .program-box input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .program-box .select-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #f1c40f;
+            color: #2c3e50;
+            border-radius: 25px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        
+        .she program-box:hover .select-btn,
+        .program-box.active .select-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Header animations */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes floatLogo {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Existing animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            /* Header responsive */
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding-top: 80px;
+                transition: left 0.3s;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .nav-links a {
+                padding: 15px 25px;
+            }
+            
+            .close-btn {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+                font-size: 1.8rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+                transition: var(--transition);
+            }
+            
+            .close-btn:hover {
+                color: var(--secondary);
+                transform: rotate(90deg);
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.7);
+                z-index: 999;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s;
+            }
+            
+            .overlay.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            /* Existing responsive */
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+            
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline-date {
+                left: -30px;
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
+            }
+            
+            .payment-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .program-selection {
+                grid-template-columns: 1fr;
+            }
+            
+            .step-title {
+                font-size: 1.1rem;
+            }
+            
+            .step-content {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .timeline-content {
+                margin-left: 20px;
+            }
+            
+            .admission-detail {
+                flex-direction: column;
+            }
+            
+            .admission-detail label {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section from Gallery Page -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="saraswati.jpg" alt="College Logo" class="logo-img">
+                <div class="logo-text">
+                    <div class="college-name">
+                        <span>Krishna Sharada Junior & Degree College</span>
+                    </div>
+                    <div class="college-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Porumamilla, Andhra Pradesh</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <nav>
+            <div class="container nav-container">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="courses.html"><i class="fas fa-book"></i> Courses</a></li>
+                    <li><a href="admissions.html" class="active"><i class="fas fa-user-graduate"></i> Admissions</a></li>
+                    <li><a href="Scholarship.html"><i class="fas fa-building"></i> Scholarship</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="contact.html"><i class="fas fa-address-book"></i> Contact</a></li>
+                    <button class="close-btn"><i class="fas fa-times"></i></button>
+                </ul>
+                <div class="overlay"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Existing Admission Page Content -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <!-- Slide 1 -->
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="hero-content">
+                    <h2>Admissions Open</h2>
+                    <p>Begin your academic journey with Krishna Sharada Junior & Degree College. Apply now for the 2023-24 academic year.</p>
+                    <a href="#application" class="btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="hero-content">
+                    <h2>Quality Education</h2>
+                    <p>Join our institution that has been shaping futures with excellence for over 25 years.</p>
+                    <a href="#requirements" class="btn">View Requirements <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');">
+                <div class="hero-content">
+                    <h2>Scholarships Available</h2>
+                    <p>Explore our scholarship programs for deserving and meritorious students.</p>
+                    <a href="#contact" class="btn">Contact Us <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <button class="slider-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <!-- Slider Dots -->
+        <div class="slider-dots">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+        </div>
+    </section>
+
+    <!-- Admissions Process Section -->
+    <section class="admissions" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admission Process</h2>
+            </div>
+            
+            <div class="admission-process">
+                <div class="process-card">
+                    <div class="step-number">1</div>
+                    <div class="process-icon"><i class="fas fa-search"></i></div>
+                    <h3>Explore Courses</h3>
+                    <p>Browse through our wide range of Intermediate, Degree, and Vocational courses to find the perfect fit for your academic and career goals.</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="step-number">2</div>
+                    <div class="process-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Check Eligibility</h3>
+                    <p>Review the admission requirements for your chosen program to ensure you meet all the necessary criteria before applying.</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="step-number">3</div>
+                    <div class="process-icon"><i class="fas fa-edit"></i></div>
+                    <h3>Submit Application</h3>
+                    <p>Complete the online or offline application form with all required documents and submit it before the deadline.</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="step-number">4</div>
+                    <div class="process-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Verification</h3>
+                    <p>Our admissions team will review your application and documents. You may be contacted for additional information if needed.</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="step-number">5</div>
+                    <div class="process-icon"><i class="fas fa-rupee-sign"></i></div>
+                    <h3>Fee Payment</h3>
+                    <p>Upon acceptance, complete the admission by paying the required fees within the specified timeframe.</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="step-number">6</div>
+                    <div class="process-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Orientation</h3>
+                    <p>Attend the orientation program to familiarize yourself with the college facilities, faculty, and academic policies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="requirements" id="requirements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admission Requirements</h2>
+            </div>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <h3>Intermediate Courses (MPC/BiPC/CEC)</h3>
+                    <ul>
+                        <li>Passed 10th standard/SSC or equivalent examination</li>
+                        <li>Minimum 50% aggregate marks (45% for SC/ST candidates)</li>
+                        <li>Original Transfer Certificate from previous institution</li>
+                        <li>Original Conduct Certificate</li>
+                        <li>10th standard marks memo (original + 2 photocopies)</li>
+                        <li>Study/Bonafide Certificate (if applicable)</li>
+                        <li>4 passport-size photographs</li>
+                        <li>Caste Certificate (if applicable)</li>
+                        <li>Aadhar Card copy</li>
+                    </ul>
+                </div>
+                
+                <div class="requirement-card">
+                    <h3>Degree Courses (B.Sc/B.Com)</h3>
+                    <ul>
+                        <li>Passed Intermediate (10+2) or equivalent examination</li>
+                        <li>Minimum 50% aggregate marks (45% for SC/ST candidates)</li>
+                        <li>Original Transfer Certificate from previous institution</li>
+                        <li>Original Conduct Certificate</li>
+                        <li>Intermediate marks memo (original + 2 photocopies)</li>
+                        <li>10th standard marks memo (for verification)</li>
+                        <li>4 passport-size photographs</li>
+                        <li>Migration Certificate (if from other board)</li>
+                        <li>Caste Certificate (if applicable)</li>
+                        <li>Aadhar Card copy</li>
+                    </ul>
+                </div>
+                
+                <div class="requirement-card">
+                    <h3>Vocational Courses</h3>
+                    <ul>
+                        <li>Passed 10th standard/SSC or equivalent examination</li>
+                        <li>Minimum 45% aggregate marks (40% for SC/ST candidates)</li>
+                        <li>Original Transfer Certificate from previous institution</li>
+                        <li>Original Conduct Certificate</li>
+                        <li>10th standard marks memo (original + 2 photocopies)</li>
+                        <li>Medical Fitness Certificate (for certain vocational courses)</li>
+                        <li>4 passport-size photographs</li>
+                        <li>Caste Certificate (if applicable)</li>
+                        <li>Aadhar Card copy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section class="admissions" id="admission-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admission Booking</h2>
+            </div>
+            <div class="admissions-section">
+                <h3>Online Admission Process</h3>
+                <div class="admission-form">
+                    <!-- Step 1: Program and Course Selection -->
+                    <div class="step active" id="step-1">
+                        <h4>Step 1: Select Program & Course</h4>
+                        <div class="program-selection">
+                            <label class="program-box">
+                                <input type="radio" name="program" value="intermediate">
+                                <div class="program-content">
+                                    <i class="fas fa-book program-icon"></i>
+                                    <h3>Intermediate</h3>
+                                    <p>Two-year programs including MPC, BiPC, and CEC for 10th pass students.</p>
+                                    <a href="#" class="select-btn">Select Intermediate</a>
+                                </div>
+                            </label>
+                            <label class="program-box">
+                                <input type="radio" name="program" value="degree">
+                                <div class="program-content">
+                                    <i class="fas fa-graduation-cap program-icon"></i>
+                                    <h3>Degree</h3>
+                                    <p>Undergraduate programs including B.Sc and B.Com for 12th pass students.</p>
+                                    <a href="#" class="select-btn">Select Degree</a>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-group" id="course-group" style="display: none;">
+                            <label for="course">Course</label>
+                            <select id="course" required>
+                                <option value="">Select Course</option>
+                            </select>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="step1-checkbox">
+                            <label for="step1-checkbox">I have selected the program and course</label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Personal and Academic Details -->
+                    <div class="step" id="step-2">
+                        <h4>Step 2: Enter Details</h4>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group" id="academic-details">
+                            <!-- Dynamic fields will be added here based on program -->
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="step2-checkbox">
+                            <label for="step2-checkbox">I have entered all details correctly</label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div class="step" id="step-3">
+                        <h4>Step 3: Make Payment</h4>
+                        <div class="payment-section">
+                            <p>Pay ₹5,000 for admission booking using your preferred payment method.</p>
+                            <div class="form-group">
+                                <label for="payment-method">Select Payment Method</label>
+                                <select id="payment-method" required>
+                                    <option value="">Select Payment Method</option>
+                                    <option value="upi">UPI</option>
+                                    <option value="card">Credit/Debit Card</option>
+                                    <option value="netbanking">Net Banking</option>
+                                    <option value="cash-cheque">Cash/Cheque</option>
+                                </select>
+                            </div>
+                            <div id="payment-details">
+                                <!-- Payment method details will be populated here -->
+                            </div>
+                            <div class="form-group" id="payment-proof-group">
+                                <label for="payment-proof">Upload Payment Proof</label>
+                                <input type="file" id="payment-proof" accept="image/*" required>
+                                <div class="upload-preview" id="proof-preview"></div>
+                            </div>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="step3-checkbox">
+                            <label for="step3-checkbox">I have made the payment and uploaded the proof</label>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Summary and Confirmation -->
+                    <div class="step" id="step-4">
+                        <h4>Step 4: Confirm Admission</h4>
+                        <div class="summary-section" id="summary">
+                            <!-- Summary will be populated here -->
+                        </div>
+                        <p>Your Admission Number: <strong id="admission-number"></strong></p>
+                        <button id="download-btn" class="btn">Download Admission Details</button>
+                        <button id="submit-btn" class="btn" disabled>Submit</button>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="step4-checkbox">
+                            <label for="step4-checkbox">I have reviewed and confirmed my admission details</label>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="navigation-buttons">
+                        <button id="prev-btn" class="btn" disabled>Previous</button>
+                        <button id="next-btn" class="btn" disabled>Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Dates Section -->
+    <section class="important-dates" id="dates">
+        <div class="container">
+            <div class="dates-container">
+                <div class="dates-title">
+                    <h3>Important Dates</h3>
+                    <p>Mark your calendar for these important admission deadlines</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">May 1</div>
+                        <div class="timeline-content">
+                            <h4>Admissions Open</h4>
+                            <p>Online and offline applications begin for all courses</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jun 15</div>
+                        <div class="timeline-content">
+                            <h4>First Merit List</h4>
+                            <p>First list of selected candidates will be published</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jun 25</div>
+                        <div class="timeline-content">
+                            <h4>Fee Payment Deadline</h4>
+                            <p>Last date for fee payment for first merit list candidates</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jul 5</div>
+                        <div class="timeline-content">
+                            <h4>Second Merit List</h4>
+                            <p>Second list of selected candidates will be published</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jul 15</div>
+                        <div class="timeline-content">
+                            <h4>Final Fee Payment</h4>
+                            <p>Last date for fee payment for second merit list candidates</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Aug 1</div>
+                        <div class="timeline-content">
+                            <h4>Classes Begin</h4>
+                            <p>Orientation program and commencement of academic session</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admission Help Desk</h2>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Visit Us</h3>
+                    <p>Krishna Sharada Junior & Degree College</p>
+                    <p>Kapu Street, Porumamilla</p>
+                    <p>Andhra Pradesh - 516193</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h3>Call Us</h3>
+                    <a href="tel:+919876543210">+91 98765 43210</a>
+                    <a href="tel:+919876543211">+91 98765 43211</a>
+                    <p>Mon-Sat: 9:00 AM - 4:00 PM</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email Us</h3>
+                    <a href="mailto:admissions@kscollege.edu.in">admissions@kscollege.edu.in</a>
+                    <a href="mailto:info@kscollege.edu.in">info@kscollege.edu.in</a>
+                    <p>Response within 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>Krishna Sharada Junior & Degree College is committed to providing quality education in Porumamilla, Andhra Pradesh since 1995.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                    <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                    <a href="courses.html"><i class="fas fa-chevron-right"></i> Courses</a>
+                    <a href="admissions.html"><i class="fas fa-chevron-right"></i> Admissions</a>
+                    <a href="facilities.html"><i class="fas fa-chevron-right"></i> Facilities</a>
+                    <a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a>
+                    <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Kapu Street, Porumamilla, AP 516193</a>
+                    <a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 98765 43210</a>
+                    <a href="tel:+919876543211"><i class="fas fa-fax"></i> +91 98765 43211</a>
+                    <a href="mailto:info@krishnasharada.edu.in"><i class="fas fa-envelope"></i> info@kscollege.edu.in</a>
+                    <a href="#"><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 4:00 PM</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> Krishna Sharada Junior & Degree College. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== HEADER FUNCTIONALITY =====
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const overlay = document.querySelector('.overlay');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        overlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Sticky header on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+        
+        // ===== EXISTING ADMISSION PAGE FUNCTIONALITY =====
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Hero Slider Functionality
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevArrow = document.querySelector('.prev-arrow');
+        const nextArrow = document.querySelector('.next-arrow');
+        const heroSlider = document.querySelector('.hero-slider');
+        let currentSlide = 0;
+        let slideInterval;
+        const slideDuration = 5000;
+
+        function updateSlider() {
+            heroSlides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                dots[index].classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                    dots[index].classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        function startSlideTimer() {
+            slideInterval = setInterval(nextSlide, slideDuration);
+        }
+
+        function resetSlideTimer() {
+            clearInterval(slideInterval);
+            startSlideTimer();
+        }
+
+        // Event listeners
+        nextArrow.addEventListener('click', () => {
+            nextSlide();
+            resetSlideTimer();
+        });
+
+        prevArrow.addEventListener('click', () => {
+            prevSlide();
+            resetSlideTimer();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-slide'));
+                goToSlide(slideIndex);
+                resetSlideTimer();
+            });
+        });
+
+        // Pause slider on hover
+        heroSlider.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        heroSlider.addEventListener('mouseleave', () => {
+            startSlideTimer();
+        });
+
+        // Initialize slider
+        updateSlider();
+        startSlideTimer();
+
+        // Admission Form Functionality
+        const steps = document.querySelectorAll('.step');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const courseSelect = document.getElementById('course');
+        const courseGroup = document.getElementById('course-group');
+        const academicDetails = document.getElementById('academic-details');
+        const step1Checkbox = document.getElementById('step1-checkbox');
+        const step2Checkbox = document.getElementById('step2-checkbox');
+        const step3Checkbox = document.getElementById('step3-checkbox');
+        const step4Checkbox = document.getElementById('step4-checkbox');
+        const paymentProof = document.getElementById('payment-proof');
+        const proofPreview = document.getElementById('proof-preview');
+        const summary = document.getElementById('summary');
+        const admissionNumber = document.getElementById('admission-number');
+        const downloadBtn = document.getElementById('download-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const paymentMethodSelect = document.getElementById('payment-method');
+        const paymentDetails = document.getElementById('payment-details');
+        const paymentProofGroup = document.getElementById('payment-proof-group');
+        const programBoxes = document.querySelectorAll('.program-box');
+        let currentStep = 1;
+        let formData = {};
+
+        // Course options
+        const courses = {
+            intermediate: [
+                'MPC (EM & TM)',
+                'BiPC (EM & TM)',
+                'CEC (EM & TM)'
+            ],
+            degree: [
+                'B.Sc MPCS (EM)',
+                'B.Sc MPC (EM)',
+                'B.Sc BZC (EM)',
+                'B.Com CA'
+            ]
+        };
+
+        // Payment method details
+        const paymentMethods = {
+            upi: `
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <i class="fas fa-qrcode"></i>
+                        <p>Pay ₹5,000 via UPI to <strong>9908521287@ybl</strong></p>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3D9908521287%40ybl%26pn%3DKrishna%20Sharada%20College%26am%3D5000%26cu%3DINR%26tn%3DAdmission%20Booking" alt="UPI QR Code">
+                        <a href="upi://pay?pa=9908521287@ybl&pn=Krishna%20Sharada%20College&am=5000&cu=INR&tn=Admission%20Booking" class="btn">Pay via UPI</a>
+                    </div>
+                </div>
+            `,
+            card: `
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <i class="fas fa-credit-card"></i>
+                        <p>Pay ₹5,000 using Credit/Debit Card</p>
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="card-expiry">Expiry Date</label>
+                                <input type="text" id="card-expiry" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-cvv">CVV</label>
+                                <input type="text" id="card-cvv" placeholder="123" required>
+                            </div>
+                        </div>
+                        <button id="card-pay-btn" class="btn">Pay via Card</button>
+                    </div>
+                </div>
+            `,
+            netbanking: `
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <i class="fas fa-university"></i>
+                        <p>Pay ₹5,000 via Net Banking</p>
+                        <div class="form-group">
+                            <label for="bank-selection">Select Bank</label>
+                            <select id="bank-selection" required>
+                                <option value="">Select Bank</option>
+                                <option value="sbi">State Bank of India</option>
+                                <option value="hdfc">HDFC Bank</option>
+                                <option value="icici">ICICI Bank</option>
+                                <option value="axis">Axis Bank</option>
+                            </select>
+                        </div>
+                        <button id="netbanking-pay-btn" class="btn">Proceed to Net Banking</button>
+                    </div>
+                </div>
+            `,
+            'cash-cheque': `
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <i class="fas fa-money-bill"></i>
+                        <p>Pay ₹5,000 via Cash or Cheque at our campus</p>
+                        <p>Visit: Krishna Sharada Junior & Degree College, Kapu Street, Porumamilla, Andhra Pradesh - 516193</p>
+                        <p>For Cheque: Payable to "Krishna Sharada College" at any branch in Porumamilla</p>
+                        <div class="form-group">
+                            <label for="transaction-id">Transaction ID/Cheque Number</label>
+                            <input type="text" id="transaction-id" placeholder="Enter Transaction ID or Cheque Number" required>
+                        </div>
+                    </div>
+                </div>
+            `
+        };
+
+        // Update course options based on program selection
+        programBoxes.forEach(box => {
+            box.addEventListener('click', (e) => {
+                e.preventDefault();
+                programBoxes.forEach(b => b.classList.remove('active'));
+                box.classList.add('active');
+                const program = box.querySelector('input').value;
+                formData.program = program;
+                courseGroup.style.display = program ? 'block' : 'none';
+                courseSelect.innerHTML = '<option value="">Select Course</option>';
+                if (program) {
+                    courses[program].forEach(course => {
+                        const option = document.createElement('option');
+                        option.value = course;
+                        option.textContent = course;
+                        courseSelect.appendChild(option);
+                    });
+                }
+                updateAcademicFields();
+                checkStep1Validity();
+            });
+        });
+
+        // Prevent select button default action
+        document.querySelectorAll('.select-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const box = btn.closest('.program-box');
+                const input = box.querySelector('input[type="radio"]');
+                input.click();
+            });
+        });
+
+        // Update academic fields based on program
+        function updateAcademicFields() {
+            const program = formData.program;
+            academicDetails.innerHTML = '';
+            if (program === 'intermediate') {
+                academicDetails.innerHTML = `
+                    <label for="tenth-board">10th Board</label>
+                    <input type="text" id="tenth-board" required>
+                    <label for="tenth-percentage">10th Percentage</label>
+                    <input type="number" id="tenth-percentage" step="0.01" min="0" max="100" required>
+                    <label for="tenth-year">Year of Passing</label>
+                    <input type="number" id="tenth-year" min="2000" max="${new Date().getFullYear()}" required>
+                `;
+            } else if (program === 'degree') {
+                academicDetails.innerHTML = `
+                    <label for="tenth-board">10th Board</label>
+                    <input type="text" id="tenth-board" required>
+                    <label for="tenth-percentage">10th Percentage</label>
+                    <input type="number" id="tenth-percentage" step="0.01" min="0" max="100" required>
+                    <label for="tenth-year">10th Year of Passing</label>
+                    <input type="number" id="tenth-year" min="2000" max="${new Date().getFullYear()}" required>
+                    <label for="intermediate-board">Intermediate Board</label>
+                    <input type="text" id="intermediate-board" required>
+                    <label for="intermediate-percentage">Intermediate Percentage</label>
+                    <input type="number" id="intermediate-percentage" step="0.01" min="0" max="100" required>
+                    <label for="intermediate-year">Intermediate Year of Passing</label>
+                    <input type="number" id="intermediate-year" min="2000" max="${new Date().getFullYear()}" required>
+                `;
+            }
+        }
+
+        // Update payment details based on payment method
+        paymentMethodSelect.addEventListener('change', () => {
+            const method = paymentMethodSelect.value;
+            paymentDetails.innerHTML = paymentMethods[method] || '';
+            paymentProofGroup.style.display = method === 'cash-cheque' ? 'none' : 'block';
+        });
+
+        // Check Step 1 validity
+        function checkStep1Validity() {
+            nextBtn.disabled = !step1Checkbox.checked || !formData.program || !courseSelect.value;
+        }
+
+        // Enable/disable next button based on checkbox and inputs
+        step1Checkbox.addEventListener('change', checkStep1Validity);
+        courseSelect.addEventListener('change', () => {
+            formData.course = courseSelect.value;
+            checkStep1Validity();
+        });
+        step2Checkbox.addEventListener('change', () => {
+            nextBtn.disabled = !step2Checkbox.checked;
+        });
+        step3Checkbox.addEventListener('change', () => {
+            const method = paymentMethodSelect.value;
+            const isValid = method === 'cash-cheque' ? 
+                document.getElementById('transaction-id')?.value : 
+                paymentProof.files.length;
+            nextBtn.disabled = !step3Checkbox.checked || !method || !isValid;
+        });
+        step4Checkbox.addEventListener('change', () => {
+            nextBtn.disabled = !step4Checkbox.checked;
+            submitBtn.disabled = !step4Checkbox.checked;
+        });
+
+        // Handle file upload preview
+        paymentProof.addEventListener('change', () => {
+            proofPreview.innerHTML = '';
+            if (paymentProof.files.length) {
+                const file = paymentProof.files[0];
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                proofPreview.appendChild(img);
+            }
+        });
+
+        // Navigation between steps
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                steps[currentStep - 1].classList.remove('active');
+                currentStep--;
+                steps[currentStep - 1].classList.add('active');
+                prevBtn.disabled = currentStep === 1;
+                nextBtn.disabled = true;
+                submitBtn.disabled = true;
+                if (currentStep === 1) step1Checkbox.checked = false;
+                if (currentStep === 2) step2Checkbox.checked = false;
+                if (currentStep === 3) step3Checkbox.checked = false;
+                if (currentStep === 4) step4Checkbox.checked = false;
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < 4) {
+                // Collect data
+                if (currentStep === 1) {
+                    formData.program = formData.program || '';
+                    formData.course = courseSelect.value;
+                } else if (currentStep === 2) {
+                    formData.name = document.getElementById('name').value;
+                    formData.email = document.getElementById('email').value;
+                    formData.phone = document.getElementById('phone').value;
+                    formData.tenthBoard = document.getElementById('tenth-board').value;
+                    formData.tenthPercentage = document.getElementById('tenth-percentage').value;
+                    formData.tenthYear = document.getElementById('tenth-year').value;
+                    if (formData.program === 'degree') {
+                        formData.intermediateBoard = document.getElementById('intermediate-board').value;
+                        formData.intermediatePercentage = document.getElementById('intermediate-percentage').value;
+                        formData.intermediateYear = document.getElementById('intermediate-year').value;
+                    }
+                } else if (currentStep === 3) {
+                    formData.paymentMethod = paymentMethodSelect.value;
+                    if (formData.paymentMethod === 'cash-cheque') {
+                        formData.transactionId = document.getElementById('transaction-id')?.value;
+                    } else {
+                        formData.paymentProof = paymentProof.files[0];
+                    }
+                }
+
+                steps[currentStep - 1].classList.remove('active');
+                currentStep++;
+                steps[currentStep - 1].classList.add('active');
+                prevBtn.disabled = false;
+                nextBtn.disabled = true;
+                submitBtn.disabled = true;
+
+                // Populate summary in step 4
+                if (currentStep === 4) {
+                    summary.innerHTML = `
+                        <p><strong>Program:</strong> ${formData.program.charAt(0).toUpperCase() + formData.program.slice(1)}</p>
+                        <p><strong>Course:</strong> ${formData.course}</p>
+                        <p><strong>Name:</strong> ${formData.name}</p>
+                        <p><strong>Email:</strong> ${formData.email}</p>
+                        <p><strong>Phone:</strong> ${formData.phone}</p>
+                        <p><strong>10th Board:</strong> ${formData.tenthBoard}</p>
+                        <p><strong>10th Percentage:</strong> ${formData.tenthPercentage}%</p>
+                        <p><strong>10th Year:</strong> ${formData.tenthYear}</p>
+                        ${formData.program === 'degree' ? `
+                            <p><strong>Intermediate Board:</strong> ${formData.intermediateBoard}</p>
+                            <p><strong>Intermediate Percentage:</strong> ${formData.intermediatePercentage}%</p>
+                            <p><strong>Intermediate Year:</strong> ${formData.intermediateYear}</p>
+                        ` : ''}
+                        <p><strong>Payment Method:</strong> ${formData.paymentMethod.charAt(0).toUpperCase() + formData.paymentMethod.slice(1).replace('-', ' ')}</p>
+                        ${formData.paymentMethod === 'cash-cheque' ? `
+                            <p><strong>Transaction ID/Cheque Number:</strong> ${formData.transactionId}</p>
+                        ` : `
+                            <p><strong>Payment Proof:</strong> <img src="${URL.createObjectURL(formData.paymentProof)}" style="max-width: 100px; border-radius: 5px;"></p>
+                        `}
+                    `;
+                    // Generate random admission number
+                    const admissionNum = 'KSJC' + Math.floor(100000 + Math.random() * 900000);
+                    admissionNumber.textContent = admissionNum;
+                    formData.admissionNumber = admissionNum;
+                    nextBtn.style.display = 'none';
+                }
+            }
+        });
+
+        // Edit functionality
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('edit-btn')) {
+                currentStep = parseInt(e.target.dataset.step);
+                steps.forEach(step => step.classList.remove('active'));
+                steps[currentStep - 1].classList.add('active');
+                prevBtn.disabled = currentStep === 1;
+                nextBtn.disabled = true;
+                submitBtn.disabled = true;
+            }
+        });
+
+        // Download admission details
+        downloadBtn.addEventListener('click', () => {
+            const data = `
+                Admission Details
+                -----------------
+                Admission Number: ${formData.admissionNumber}
+                Program: ${formData.program.charAt(0).toUpperCase() + formData.program.slice(1)}
+                Course: ${formData.course}
+                Name: ${formData.name}
+                Email: ${formData.email}
+                Phone: ${formData.phone}
+                10th Board: ${formData.tenthBoard}
+                10th Percentage: ${formData.tenthPercentage}%
+                10th Year: ${formData.tenthYear}
+                ${formData.program === 'degree' ? `
+                Intermediate Board: ${formData.intermediateBoard}
+                Intermediate Percentage: ${formData.intermediatePercentage}%
+                Intermediate Year: ${formData.intermediateYear}
+                ` : ''}
+                Payment Method: ${formData.paymentMethod.charAt(0).toUpperCase() + formData.paymentMethod.slice(1).replace('-', ' ')}
+                ${formData.paymentMethod === 'cash-cheque' ? `
+                Transaction ID/Cheque Number: ${formData.transactionId}
+                ` : ''}
+            `;
+            const blob = new Blob([data], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Admission_${formData.admissionNumber}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        // Submit button functionality
+        submitBtn.addEventListener('click', () => {
+            if (step4Checkbox.checked) {
+                steps[3].innerHTML = `
+                    <h4 class="thank-you-message">Thank you, your admission is completed!</h4>
+                `;
+                prevBtn.style.display = 'none';
+                submitBtn.style.display = 'none';
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+admissions.html
+Displaying about.html.

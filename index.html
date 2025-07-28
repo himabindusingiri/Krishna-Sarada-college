@@ -1,0 +1,2833 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Sharada Junior & Degree College - Porumamilla</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.sticky {
+            padding: 5px 0;
+            background-color: rgba(44, 62, 80, 0.98);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Logo Styles */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-img {
+            height: 70px;
+            width: 70px;
+            object-fit: contain;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite alternate;
+            border-radius: 50%;
+            border: 2px solid #f1c40f;
+            padding: 5px;
+            background-color: white;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .college-name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            background: linear-gradient(90deg, #f1c40f, #e67e22);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            transition: all 0.3s ease;
+        }
+        
+        .college-location {
+            font-size: 0.8rem;
+            color: #ecf0f1;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .college-location i {
+            color: #f1c40f;
+        }
+        
+        header.sticky .logo-img {
+            height: 50px;
+            width: 50px;
+        }
+        
+        header.sticky .college-name {
+            font-size: 1.2rem;
+        }
+        
+        /* Scrolling Admission Banner (AFTER HEADER) */
+    .scroll-banner {
+      background-color: #ffe082;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 10px 0;
+      border-bottom: 2px solid #fbc02d;
+    }
+
+    .scroll-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+      font-weight: bold;
+      font-size: 18px;
+      color: #d32f2f;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .contact-item i {
+            color: #f1c40f;
+            font-size: 1rem;
+        }
+        
+        .contact-item:hover a {
+            color: #f1c40f;
+        }
+        
+        .contact-item:hover i {
+            transform: scale(1.2);
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background-color: #34495e;
+            transition: all 0.3s ease;
+        }
+        
+        header.sticky nav {
+            background-color: rgba(52, 73, 94, 0.98);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+            font-size: 1.3rem;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #f1c40f;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 70%;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: #f1c40f;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+            transition: all 0.3s;
+        }
+        
+        .mobile-menu-btn:hover {
+            color: #f1c40f;
+            transform: scale(1.1);
+        }
+        
+        /* Scrolling Text Styles */
+        .scrolling-text {
+            color: rgba(222, 15, 241, 0.9);
+            padding: 10px 0;
+            overflow: hidden;
+            height: 50px;
+            white-space: nowrap;
+            position: relative;
+            font-weight: 500;
+            font-size: 1.5rem;
+        }
+        
+        .scrolling-text .marquee {
+            display: inline-block;
+            padding-right: 50px;
+            animation: scrollText 15s linear infinite;
+        }
+        
+        .scrolling-text .highlight {
+            color: #3ce7ae;
+            font-weight: 600;
+        }
+        
+        /* Animations */
+        @keyframes scrollText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .college-name {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .logo-container {
+                justify-content: center;
+            }
+            
+            .contact-info {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: #2c3e50;
+                flex-direction: column;
+                padding-top: 80px;
+                transition: left 0.3s;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .nav-links a {
+                padding: 15px 25px;
+            }
+            
+            .close-btn {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+                font-size: 1.8rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+            
+            .close-btn:hover {
+                color: #f1c40f;
+                transform: rotate(90deg);
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.7);
+                z-index: 999;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s;
+            }
+            
+            .overlay.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-container {
+                gap: 10px;
+            }
+            
+            .logo-img {
+                height: 50px;
+                width: 50px;
+            }
+            
+            .college-name {
+                font-size: 1rem;
+            }
+            
+            .college-location {
+                font-size: 0.7rem;
+            }
+            
+            .contact-item {
+                font-size: 0.9rem;
+            }
+            
+            .scrolling-text {
+                font-size: 2rem;
+                height: 35px;
+            }
+            
+            header.sticky .logo-img {
+                height: 40px;
+                width: 40px;
+            }
+            
+            header.sticky .college-name {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            max-height: 800px;
+            overflow: hidden;
+        }
+        
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            transform: scale(1.1);
+            z-index: 1;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 2;
+        }
+        
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+            z-index: 3;
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+            text-align: center;
+            color: white;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .hero-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 5;
+            transform: translateY(-50%);
+        }
+        
+        .slider-arrow {
+            background: rgba(241, 196, 15, 0.7);
+            color: #2c3e50;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .slider-arrow:hover {
+            background: #f1c40f;
+            transform: scale(1.1);
+        }
+        
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 5;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .slider-dot.active {
+            background: #f1c40f;
+            transform: scale(1.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #f1c40f;
+            color: #2c3e50;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid #f1c40f;
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: #f1c40f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: #f1c40f;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.4s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #f1c40f;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #f1c40f;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: #f1c40f;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.4rem;
+        }
+        
+        /* Rankings Section */
+        .rankings {
+            padding: 80px 0;
+            background-color: #f0f7ff;
+        }
+        
+        .ranking-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .ranking-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .ranking-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .ranking-badge {
+            font-size: 2.5rem;
+            color: #f1c40f;
+            margin-bottom: 20px;
+        }
+        
+        .ranking-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .ranking-details {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .ranking-highlight {
+            font-weight: 700;
+            color: #e67e22;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(241, 196, 15, 0.1);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .about::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(241, 196, 15, 0.1);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(44, 62, 80, 0.2), rgba(44, 62, 80, 0.5));
+            z-index: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-text h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #f1c40f;
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        
+        /* News Section */
+        .news {
+            padding: 80px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .news::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, #f9f9f9, transparent);
+            z-index: 1;
+        }
+        
+        .news .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.4s;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #f1c40f;
+        }
+        
+        .news-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.1);
+        }
+        
+        .news-date {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #f1c40f;
+            color: #2c3e50;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+        
+        .news-content {
+            padding: 25px;
+        }
+        
+        .news-content h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+        
+        .news-card:hover .news-content h3 {
+            color: #f1c40f;
+        }
+        
+        .news-content p {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+        
+        .read-more {
+            color: #f1c40f;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .read-more:hover {
+            color: #e67e22;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Blog Section */
+        .blog {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.4s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .blog-meta span i {
+            margin-right: 5px;
+            color: #f1c40f;
+        }
+        
+        .blog-content h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            transition: color 0.3s;
+        }
+        
+        .blog-card:hover .blog-content h3 {
+            color: #f1c40f;
+        }
+        
+        .blog-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(to right, #2c3e50, #34495e);
+            color: white;
+            padding: 70px 0 20px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, #f1c40f, #e67e22);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: #f1c40f;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: #f1c40f;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ecf0f1;
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #f1c40f;
+            transform: translateX(5px);
+        }
+        
+        .footer-column a i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #f1c40f;
+            color: #2c3e50;
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scrollText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                justify-content: center;
+            }
+            
+            .contact-info {
+                text-align: center;
+                margin-top: 10px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: #2c3e50;
+                flex-direction: column;
+                padding-top: 80px;
+                transition: left 0.3s;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .nav-links a {
+                padding: 15px 25px;
+                
+            }
+            
+            .close-btn {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+                font-size: 1.8rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+            
+            .close-btn:hover {
+                color: #f1c40f;
+                transform: rotate(90deg);
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.7);
+                z-index: 999;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s;
+            }
+            
+            .overlay.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            .hero {
+                height: 80vh;
+                max-height: 600px;
+            }
+            
+            .hero-content {
+                padding: 0 20px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+                margin: 0 10px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .college-name h1 {
+                font-size: 1.3rem;
+            }
+            
+            .college-name p {
+                font-size: 0.8rem;
+            }
+            
+            .logo img {
+                height: 50px;
+                margin-right: 10px;
+            }
+            
+            header.sticky .logo img {
+                height: 40px;
+            }
+            
+            .feature-card, .news-card {
+                padding: 30px 20px;
+            }
+            
+            .scrolling-text .college-name {
+                font-size: 0.9rem;
+            }
+            
+            .hero {
+                height: 70vh;
+                max-height: 500px;
+            }
+            
+            .slider-arrow {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+        /* College Name Styling with Animations */
+        .college-name span {
+            font-size: 2rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            color: white;
+            background: linear-gradient(90deg, #f1c40f, #e67e22, #f1c40f);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: 
+                gradient 3s linear infinite,
+                float 3s ease-in-out infinite,
+                glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 0 10px rgba(241, 196, 15, 0.3);
+        }
+        
+        /* NEW STYLES FOR IMAGE SECTIONS */
+        .feature-image {
+            height: 180px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .feature-card:hover .feature-image img {
+            transform: scale(1.1);
+        }
+        
+        .ranking-image {
+            height: 160px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .ranking-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .ranking-card:hover .ranking-image img {
+            transform: scale(1.05);
+        }
+        
+        .ranking-badge-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .ranking-badge {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .ranking-badge-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(241, 196, 15, 0.2);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .features-grid {
+            gap: 25px;
+        }
+        
+        .feature-card {
+            padding: 25px 20px;
+        }
+        
+        .ranking-container {
+            gap: 25px;
+        }
+        
+        .ranking-card {
+            padding: 25px 20px;
+        }
+        
+        /* New stats section */
+        .stats {
+            padding: 80px 0;
+            background: linear-gradient(to right, #2c3e50, #34495e);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
+            opacity: 0.15;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(241, 196, 15, 0.2);
+        }
+        
+        .stat-icon {
+            font-size: 3rem;
+            color: #f1c40f;
+            margin-bottom: 15px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* New gallery section */
+        .gallery {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 240px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+                /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: #f1c40f;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .testimonial-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .testimonial-wrapper {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-box {
+            min-width: 300px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 0 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-avatar img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 2px solid #f1c40f;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-position {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background-color: #f1c40f;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .testimonial-box {
+                min-width: 250px;
+                padding: 15px;
+            }
+
+            .testimonial-avatar img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .testimonial-box {
+                min-width: 200px;
+                margin: 0 10px;
+            }
+
+            .testimonial-text {
+                font-size: 0.9rem;
+            }
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        :root {
+            --primary: #212529;
+            --secondary: #3f37c9;
+            --accent: #f7bf25;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --success: #4cc9f0;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+                .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-top: 2rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), #f72585c0);
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+        
+        /* Courses Grid */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        /* Course Card */
+        .course-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            border: none;
+        }
+        
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Course Image */
+        .course-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .course-card:hover .course-image img {
+            transform: scale(1.05);
+        }
+        
+        /* Course Badge */
+        .course-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(247, 37, 133, 0.3);
+        }
+        
+        /* Course Content */
+        .course-content {
+            padding: 1.5rem;
+        }
+        
+        .course-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+        
+        .course-content p {
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Features List */
+        .course-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .course-features li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .course-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--success);
+        }
+        
+        /* Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            gap: 0.5rem;
+            background-color: #f1c40f;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        /* Stats */
+        .course-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-card {
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+        .animate-card:nth-child(1) { animation-delay: 0.1s; }
+        .animate-card:nth-child(2) { animation-delay: 0.3s; }
+        .animate-card:nth-child(3) { animation-delay: 0.5s; }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .courses-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .course-image {
+                height: 160px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header Section -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="saraswati.jpg" alt="College Logo" class="logo-img">
+                <div class="logo-text">
+                    <div class="college-name">
+                        <span>Krishna Sharada Junior & Degree College</span>
+                    </div>
+                    <div class="college-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Porumamilla, Andhra Pradesh</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@krishnasharada.edu.in">info@kscollege.edu.in</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+919876543210">+91 98765 43210</a>
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <div class="container nav-container">
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="courses.html"><i class="fas fa-book"></i> Courses</a></li>
+                    <li><a href="admissions.html"><i class="fas fa-user-graduate"></i> Admissions</a></li>
+                    <li><a href="scholarship.html"><i class="fas fa-building"></i> scholarship</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="contact.html"><i class="fas fa-address-book"></i> Contact</a></li>
+                    <button class="close-btn"><i class="fas fa-times"></i></button>
+                </ul>
+                <div class="overlay"></div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <!-- Slide 1 -->
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="hero-content">
+                    <h2>Empowering Minds, Building Futures</h2>
+                    <p>Krishna Sharada Junior & Degree College is committed to providing excellent education and holistic development to students in Porumamilla and surrounding areas for over 25 years.</p>
+                    <a href="admissions.html" class="btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="hero-content">
+                    <h2>Quality Education Since 1995</h2>
+                    <p>Our institution has been a beacon of knowledge and excellence in Porumamilla, shaping young minds for a better future.</p>
+                    <a href="about.html" class="btn">Our History <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');">
+                <div class="hero-content">
+                    <h2>Holistic Development</h2>
+                    <p>We believe in nurturing not just academic excellence but also sports, arts, and leadership qualities in our students.</p>
+                    <a href="facilities.html" class="btn">Our Facilities <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="hero-content">
+                    <h2>Experienced Faculty</h2>
+                    <p>Our dedicated team of teachers provides personalized attention to help every student achieve their full potential.</p>
+                    <a href="about.html#faculty" class="btn">Meet Our Faculty <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="hero-content">
+                    <h2>Admissions Open</h2>
+                    <p>Join our family of learners and achievers. Applications for the 2023-24 academic year are now being accepted.</p>
+                    <a href="admissions.html" class="btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <button class="slider-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <!-- Slider Dots -->
+        <div class="slider-dots">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+            <div class="slider-dot" data-slide="3"></div>
+            <div class="slider-dot" data-slide="4"></div>
+        </div>
+    </section>
+    <!-- Scrolling Admission Banner -->
+  <div class="scroll-banner">
+    <div class="scroll-text">
+      <a href="admission.html"class="on underline "> 🎓 Admission Open Now – Enroll Today! Limited Seats Available! Call Us: +91-8500750666,9440272019,9494619111,9030550099.🎓
+</a>
+    </div>
+  </div>
+
+        <section class="vocational-courses">
+        <div class="container">
+            <div class="section-header">
+                <h2>Vocational Excellence Programs</h2>
+                <p>Industry-aligned training designed to launch your career with practical, in-demand skills</p>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="courses-grid">
+                <!-- Crop Production -->
+                <div class="course-card animate-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Modern Farming Techniques" loading="lazy">
+                        <span class="course-badge">6 Months</span>
+                    </div>
+                    <div class="course-content">
+                        <h3>Advanced Crop Production</h3>
+                        <p>Master cutting-edge agricultural techniques with our comprehensive farming program designed for modern challenges.</p>
+                        <ul class="course-features">
+                            <li>Precision agriculture technologies</li>
+                            <li>Soil health management</li>
+                            <li>Climate-smart practices</li>
+                            <li>Agri-business development</li>
+                        </ul>
+                        <a href="#crop-production" class="btn btn-primary">
+                            <i class="fas fa-arrow-right"></i> Explore Program
+                        </a>
+                        <div class="course-stats">
+                            <span class="stat-item"><i class="fas fa-user-graduate"></i> 240+ Trained</span>
+                            <span class="stat-item"><i class="fas fa-briefcase"></i> 92% Placement</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Livestock Management -->
+                <div class="course-card animate-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Dairy Farm Management" loading="lazy">
+                        <span class="course-badge">8 Months</span>
+                    </div>
+                    <div class="course-content">
+                        <h3>Livestock & Dairy Science</h3>
+                        <p>Comprehensive training in modern animal husbandry and dairy processing technologies for industry readiness.</p>
+                        <ul class="course-features">
+                            <li>Advanced dairy technology</li>
+                            <li>Animal nutrition science</li>
+                            <li>Veterinary care basics</li>
+                            <li>Quality control systems</li>
+                        </ul>
+                        <a href="#livestock" class="btn btn-primary">
+                            <i class="fas fa-arrow-right"></i> Explore Program
+                        </a>
+                        <div class="course-stats">
+                            <span class="stat-item"><i class="fas fa-user-graduate"></i> 180+ Trained</span>
+                            <span class="stat-item"><i class="fas fa-briefcase"></i> 88% Placement</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Health Worker -->
+                <div class="course-card animate-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Community Healthcare" loading="lazy">
+                        <span class="course-badge">12 Months</span>
+                    </div>
+                    <div class="course-content">
+                        <h3>Community Health Specialist</h3>
+                        <p>Empowering healthcare professionals with skills to serve diverse communities through comprehensive training.</p>
+                        <ul class="course-features">
+                            <li>Primary healthcare delivery</li>
+                            <li>Maternal-child wellness</li>
+                            <li>Health education strategies</li>
+                            <li>Emergency response training</li>
+                        </ul>
+                        <a href="#health-worker" class="btn btn-primary">
+                            <i class="fas fa-arrow-right"></i> Explore Program
+                        </a>
+                        <div class="course-stats">
+                            <span class="stat-item"><i class="fas fa-user-graduate"></i> 350+ Trained</span>
+                            <span class="stat-item"><i class="fas fa-briefcase"></i> 95% Placement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features Section - Why Choose Our College -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our College</h2>
+                <p>Discover what makes Krishna Sharada Junior & Degree College the preferred choice for quality education</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Experienced Faculty">
+                    </div>
+                    <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Experienced Faculty</h3>
+                    <p>Our college boasts a team of highly qualified and experienced teachers dedicated to student success with personalized attention.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://media.istockphoto.com/id/1329506024/photo/portrait-of-young-women-student-standing-isolated-over-yellow-background-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=DtM_UhXNNxNHMaDeEUuPeARAbcRTMRcjHeg35C7K4dE=" alt="Quality Education">
+                    </div>
+                    <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Quality Education</h3>
+                    <p>We provide comprehensive education that prepares students for both academic excellence and professional success.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Excellent Results">
+                    </div>
+                    <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Excellent Results</h3>
+                    <p>Consistently high pass percentages and university rankings showcase our commitment to academic excellence.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Modern Laboratories">
+                    </div>
+                    <div class="feature-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Modern Laboratories</h3>
+                    <p>State-of-the-art science labs equipped with the latest technology for practical learning and research.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=1153&q=80" alt="Well-Stocked Library">
+                    </div>
+                    <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                    <h3>Well-Stocked Library</h3>
+                    <p>Our extensive library houses over 15,000 books, journals, and digital resources for comprehensive learning.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Digital Classrooms">
+                    </div>
+                    <div class="feature-icon"><i class="fas fa-laptop"></i></div>
+                    <h3>Digital Classrooms</h3>
+                    <p>Smart classrooms with digital learning tools to enhance the educational experience and engagement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Research Opportunities">
+                    </div>
+                    <div class="feature-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Research Opportunities</h3>
+                    <p>Students have access to research programs and projects under the guidance of expert faculty members.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Student Support Services">
+                    </div>
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>Student Support Services</h3>
+                    <p>Comprehensive counseling, career guidance, and mentorship programs to support student development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Rankings Section - Student Achievements & Rankings -->
+    <section class="rankings">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Achievements & Rankings</h2>
+                <p>Our students consistently excel in academics and beyond</p>
+            </div>
+            <div class="ranking-container">
+                <div class="ranking-card">
+                    <div class="ranking-image">
+                        <img src="https://images.unsplash.com/photo-1543269865-0a740d43b90c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="University Rankings">
+                    </div>
+                    <div class="ranking-badge-container">
+                        <div class="ranking-badge"><i class="fas fa-medal"></i></div>
+                    </div>
+                    <div class="ranking-title">University Rankings</div>
+                    <div class="ranking-details">Ranked <span class="ranking-highlight">#3</span> among all degree colleges in Andhra Pradesh by the State Education Board</div>
+                </div>
+                <div class="ranking-card">
+                    <div class="ranking-image">
+                        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Academic Excellence">
+                    </div>
+                    <div class="ranking-badge-container">
+                        <div class="ranking-badge"><i class="fas fa-award"></i></div>
+                    </div>
+                    <div class="ranking-title">Academic Excellence</div>
+                    <div class="ranking-details"><span class="ranking-highlight">95%</span> pass rate in university examinations for the past 5 consecutive years</div>
+                </div>
+                <div class="ranking-card">
+                    <div class="ranking-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Top Performers">
+                    </div>
+                    <div class="ranking-badge-container">
+                        <div class="ranking-badge"><i class="fas fa-user-graduate"></i></div>
+                    </div>
+                    <div class="ranking-title">Top Performers</div>
+                    <div class="ranking-details"><span class="ranking-highlight">12 students</span> secured university ranks in the last academic year across various disciplines</div>
+                </div>
+                <div class="ranking-card">
+                    <div class="ranking-image">
+                        <img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Scholarships">
+                    </div>
+                    <div class="ranking-badge-container">
+                        <div class="ranking-badge"><i class="fas fa-trophy"></i></div>
+                    </div>
+                    <div class="ranking-title">Scholarships</div>
+                    <div class="ranking-details">Over <span class="ranking-highlight">₹25 lakhs</span> in scholarships awarded to meritorious students last year</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Our College in Numbers</h2>
+                <p style="color: rgba(255,255,255,0.8);">Quantifying our commitment to excellence</p>
+            </div>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="stat-number">2500+</div>
+                    <div class="stat-text">Successful Alumni</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-book"></i></div>
+                    <div class="stat-number">15,000+</div>
+                    <div class="stat-text">Books in Library</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="stat-number">45+</div>
+                    <div class="stat-text">Expert Faculty</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-medal"></i></div>
+                    <div class="stat-number">95%</div>
+                    <div class="stat-text">Pass Percentage</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>About Krishna Sharada Junior & Degree College</h3>
+                    <p>Established in 1995, Krishna Sharada Junior & Degree College has been a beacon of quality education in Porumamilla, Andhra Pradesh. Our institution is recognized for its academic excellence and commitment to student development.</p>
+                    <p>We offer a wide range of courses in arts, science, and commerce streams, catering to the diverse educational needs of students from Porumamilla and surrounding regions.</p>
+                    <p>With state-of-the-art facilities, a dedicated faculty, and a commitment to holistic development, we strive to nurture the leaders of tomorrow through innovative teaching methods and extracurricular activities.</p>
+                    <a href="about.html" class="btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="College Campus">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Campus Life Gallery</h2>
+                <p>Experience the vibrant campus life at Krishna Sharada College</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Classroom">
+                    <div class="gallery-overlay">Modern Classroom</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1543269865-0a740d43b90c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Library">
+                    <div class="gallery-overlay">Well-Stocked Library</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Computer Lab">
+                    <div class="gallery-overlay">Computer Laboratory</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Cultural Event">
+                    <div class="gallery-overlay">Cultural Festival</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Sports">
+                    <div class="gallery-overlay">Sports Activities</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Seminar">
+                    <div class="gallery-overlay">Academic Seminar</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Students Say</h2>
+                <p>Hear from our students and alumni about their experiences</p>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-box">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Student 1">
+                        </div>
+                        <p class="testimonial-text">"My experience at Krishna Sharada College has been transformative. The faculty's dedication to student success and the supportive learning environment helped me excel in my studies and develop personally."</p>
+                        <div class="testimonial-author">Rajesh Kumar</div>
+                        <div class="testimonial-position">B.Sc Graduate, 2022</div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Student 2">
+                        </div>
+                        <p class="testimonial-text">"The practical approach to learning and the well-equipped laboratories gave me a competitive edge. I secured a position in a top research institute thanks to the skills I developed here."</p>
+                        <div class="testimonial-author">Priya Sharma</div>
+                        <div class="testimonial-position">B.Com Graduate, 2021</div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Student 3">
+                        </div>
+                        <p class="testimonial-text">"The college's emphasis on holistic development through cultural events, sports, and leadership programs helped me discover my potential beyond academics."</p>
+                        <div class="testimonial-author">Vikram Reddy</div>
+                        <div class="testimonial-position">BA Graduate, 2020</div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1531123897727-8f6da07e1af1?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Student 4">
+                        </div>
+                        <p class="testimonial-text">"The career guidance sessions were a game-changer for me. With the college's support, I landed my dream job in the corporate sector."</p>
+                        <div class="testimonial-author">Anjali Singh</div>
+                        <div class="testimonial-position">B.Com Graduate, 2023</div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Student 5">
+                        </div>
+                        <p class="testimonial-text">"The scholarships and extracurricular activities at Krishna Sharada opened new opportunities for me to grow both academically and socially."</p>
+                        <div class="testimonial-author">Suresh Patel</div>
+                        <div class="testimonial-position">B.Sc Graduate, 2023</div>
+                    </div>
+                    <div class="testimonial-box">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Student 6">
+                        </div>
+                        <p class="testimonial-text">"The college’s focus on innovation and technology prepared me for the challenges of the modern world."</p>
+                        <div class="testimonial-author">Neha Gupta</div>
+                        <div class="testimonial-position">BA Graduate, 2022</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <div class="testimonial-dot active" data-index="0"></div>
+                <div class="testimonial-dot" data-index="1"></div>
+                <div class="testimonial-dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+   <!-- News Section -->
+    <section class="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest News & Events</h2>
+                <p>Stay updated with the latest happenings at our college</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Admissions Open">
+                        <div class="news-date">15 JUN</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Admissions Open for 2023-24</h3>
+                        <p>Applications are now being accepted for all courses. Limited seats available in B.Sc, B.Com and BA programs.</p>
+                        <a href="admissions.html" class="read-more">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Sports Day">
+                        <div class="news-date">28 MAY</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Annual Sports Day</h3>
+                        <p>Join us for our exciting sports day event featuring various competitions, races, and cultural activities.</p>
+                        <a href="news.html" class="read-more">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Seminar">
+                        <div class="news-date">15 MAY</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Career Guidance Seminar</h3>
+                        <p>Renowned speakers from various industries will share insights on career opportunities after graduation.</p>
+                        <a href="news.html" class="read-more">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Student Achievement">
+                        <div class="news-date">10 MAY</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Students Win National Science Fair</h3>
+                        <p>Our B.Sc students secured first place in the National Science Exhibition for their innovative project.</p>
+                        <a href="news.html" class="read-more">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Cultural Fest">
+                        <div class="news-date">05 MAY</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Annual Cultural Fest "Sharada Utsav"</h3>
+                        <p>Three-day cultural extravaganza featuring music, dance, drama, and art competitions begins next week.</p>
+                        <a href="news.html" class="read-more">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="New Lab">
+                        <div class="news-date">28 APR</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>New Computer Lab Inaugurated</h3>
+                        <p>State-of-the-art computer lab with 50 high-end systems and latest software inaugurated today.</p>
+                        <a href="news.html" class="read-more">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog">
+        <div class="container">
+            <div class="section-title">
+                <h2>Educational Insights & Blogs</h2>
+                <p>Thought leadership and educational resources from our faculty</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Study Techniques">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Dr. R. Sharma</span>
+                            <span><i class="fas fa-calendar"></i> 12 Jun</span>
+                        </div>
+                        <h3>Effective Study Techniques for College Students</h3>
+                        <p>Discover proven methods to enhance your learning efficiency and academic performance in college.</p>
+                        <a href="#" class="read-more">Read Full Article <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Career Paths">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Prof. A. Kumar</span>
+                            <span><i class="fas fa-calendar"></i> 5 Jun</span>
+                        </div>
+                        <h3>Emerging Career Paths for Science Graduates</h3>
+                        <p>Explore the latest career opportunities in science fields and how to prepare for them during your degree.</p>
+                        <a href="#" class="read-more">Read Full Article <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Digital Learning">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-user"></i> Dr. S. Patel</span>
+                            <span><i class="fas fa-calendar"></i> 28 May</span>
+                        </div>
+                        <h3>The Future of Digital Learning in Higher Education</h3>
+                        <p>How technology is transforming the educational landscape and what it means for students and educators.</p>
+                        <a href="#" class="read-more">Read Full Article <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>Krishna Sharada Junior & Degree College is committed to providing quality education in Porumamilla, Andhra Pradesh since 1995.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                    <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                    <a href="courses.html"><i class="fas fa-chevron-right"></i> Courses</a>
+                    <a href="admissions.html"><i class="fas fa-chevron-right"></i> Admissions</a>
+                    <a href="facilities.html"><i class="fas fa-chevron-right"></i> Facilities</a>
+                    <a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a>
+                    <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Kapu Street, Porumamilla, AP 516193</a>
+                    <a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 98765 43210</a>
+                    <a href="tel:+919876543211"><i class="fas fa-fax"></i> +91 98765 43211</a>
+                    <a href="mailto:info@krishnasharada.edu.in"><i class="fas fa-envelope"></i> info@kscollege.edu.in</a>
+                    <a href="#"><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 4:00 PM</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> Krishna Sharada Junior & Degree College. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const overlay = document.querySelector('.overlay');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        overlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Sticky header on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+        
+        // Logo floating animation
+        const logoImg = document.querySelector('.logo-img');
+        logoImg.addEventListener('mouseover', () => {
+            logoImg.style.animation = 'float 2s ease-in-out infinite';
+        });
+        
+        logoImg.addEventListener('mouseout', () => {
+            logoImg.style.animation = 'pulse 2s infinite alternate';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Hero Slider Functionality
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevArrow = document.querySelector('.prev-arrow');
+        const nextArrow = document.querySelector('.next-arrow');
+        const heroSlider = document.querySelector('.hero-slider');
+        let currentSlide = 0;
+        let slideInterval;
+        const slideDuration = 5000; // Changed to 5 seconds for slower transitions
+
+        function updateSlider() {
+            heroSlides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                dots[index].classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                    dots[index].classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        function startSlideTimer() {
+            slideInterval = setInterval(nextSlide, slideDuration);
+        }
+
+        function resetSlideTimer() {
+            clearInterval(slideInterval);
+            startSlideTimer();
+        }
+
+        // Event listeners
+        nextArrow.addEventListener('click', () => {
+            nextSlide();
+            resetSlideTimer();
+        });
+
+        prevArrow.addEventListener('click', () => {
+            prevSlide();
+            resetSlideTimer();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-slide'));
+                goToSlide(slideIndex);
+                resetSlideTimer();
+            });
+        });
+
+        // Pause slider on hover
+        heroSlider.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        heroSlider.addEventListener('mouseleave', () => {
+            startSlideTimer();
+        });
+
+        // Initialize slider
+        updateSlider();
+        startSlideTimer();
+
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.feature-card, .news-card, .about-text, .about-image, .ranking-card, .blog-card, .stat-card, .gallery-item');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        document.querySelectorAll('.feature-card, .news-card, .about-text, .about-image, .ranking-card, .blog-card, .stat-card, .gallery-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Testimonial slider
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        let currentTestimonial = 0;
+        let testimonialInterval;
+        
+        function updateTestimonial() {
+            testimonialSlides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                testimonialDots[index].classList.remove('active');
+                if (index === currentTestimonial) {
+                    slide.classList.add('active');
+                    testimonialDots[index].classList.add('active');
+                }
+            });
+        }
+        
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+            updateTestimonial();
+        }
+        
+        function startTestimonialTimer() {
+            testimonialInterval = setInterval(nextTestimonial, 6000);
+        }
+        
+        testimonialDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                currentTestimonial = parseInt(this.getAttribute('data-index'));
+                updateTestimonial();
+            });
+        });
+        
+        // Initialize testimonial slider
+        updateTestimonial();
+        startTestimonialTimer();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Enhanced scroll animation
+            const animateElements = () => {
+                const cards = document.querySelectorAll('.animate-card');
+                const windowHeight = window.innerHeight;
+                
+                cards.forEach((card, index) => {
+                    const elementPosition = card.getBoundingClientRect().top;
+                    const animationDelay = index * 0.15;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        card.style.animationDelay = `${animationDelay}s`;
+                        card.style.opacity = 1;
+                    }
+                });
+            };
+            
+            // Initialize animations
+            animateElements();
+            
+            // Animate on scroll
+            window.addEventListener('scroll', animateElements);
+            
+            // Enhanced card hover effects
+            const cards = document.querySelectorAll('.course-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
+                    
+                    const img = this.querySelector('.course-image img');
+                    if (img) img.style.transform = 'scale(1.05)';
+                    
+                    const badge = this.querySelector('.course-badge');
+                    if (badge) badge.style.transform = 'scale(1.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                    this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.08)';
+                    
+                    const img = this.querySelector('.course-image img');
+                    if (img) img.style.transform = '';
+                    
+                    const badge = this.querySelector('.course-badge');
+                    if (badge) badge.style.transform = '';
+                });
+            });
+            
+            // Button click analytics (example)
+            document.querySelectorAll('.btn-primary').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const courseTitle = this.closest('.course-card').querySelector('h3').textContent;
+                    
+                    // Example analytics event
+                    console.log(`Course selected: ${courseTitle}`);
+                    // In production: send to Google Analytics, etc.
+                    
+                    // Smooth scroll to section (example)
+                    const targetId = this.getAttribute('href');
+                    if (targetId.startsWith('#')) {
+                        document.querySelector(targetId)?.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Performance optimization
+            if ('IntersectionObserver' in window) {
+                const lazyImages = document.querySelectorAll('.course-image img[loading="lazy"]');
+                
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.getAttribute('src');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => imageObserver.observe(img));
+            }
+        });
+    </script>
+</body>
+</html>
